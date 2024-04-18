@@ -1,0 +1,89 @@
+body {
+    background-color: #25262C;
+    align-items: center;
+    position: relative;
+}
+.container {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: #25262C;
+    /* width: 100%; */
+    /* height: 100%; */
+    padding: 10px;
+}
+
+.LOGO {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: #FEF3E2;
+    /* image */
+}
+
+.alltext {
+    color: #C563DE;
+    font-family: 'Arial';
+}
+.newPost {
+    font-size: 20px;
+    font-weight: bolder;
+    align-self: center;
+    margin: 200 auto;
+}
+
+.pre_pic {
+    background-color: #FEF3E2;
+    font-size:14px;
+    align-self: center;
+    text-align: center;
+    max-width: 630px;
+    max-height: 430px;
+    min-width: 230px;
+    min-height: 130px;
+    margin-bottom: 3vw;
+}
+
+.setimg {
+    width: 100%;
+    height: auto;
+    align-self: center;
+    vertical-align: middle;
+}
+
+.selectPhoto {
+    background-color: #FEF3E2;
+    font-weight: bolder;
+    max-width: 630px;
+    width: 100%;
+    padding: 5px;
+    align-self: center;
+    border-radius: 10px;
+    margin: 3vw;
+}
+
+.bottomBar {
+    align-self: center;
+    max-width: 630px;
+    width: 100%;
+    /* background-color:aqua; */
+}
+
+.cancelButton {
+    width: fit-content;
+    background-color: #FEF3E2;
+    font-weight: bolder;
+    border-radius: 10px;
+    padding: 5px 10px;
+    /* float: left; */
+}
+
+.postButton {
+    width: fit-content;
+    background-color: #FEF3E2;
+    font-weight: bolder;
+    font-weight: bolder;
+    border-radius: 10px;
+    padding: 5px 10px;
+    float: right;
+}
