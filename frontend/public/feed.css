@@ -1,0 +1,42 @@
+#top-bar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#btm-bar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#postsContainer {
+max-width: 600px;
+margin: 20px auto;
+background-color: red;
+}
+
+.postBox {
+border: 1px solid #ddd;
+margin-bottom: 20px;
+padding: 10px;
+}
+
+.postBox img {
+width: 100%;
+}
+
+.postBox .headerPost {
+margin-top: 10px;
+}
+  
