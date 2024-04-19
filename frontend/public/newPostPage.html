@@ -7,22 +7,22 @@
     <link rel="stylesheet" href="newPostStyle.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="mainContainer">
         <!-- <button class="LOGO">LOGO</button> -->
         <h2 class="alltext newPost">New post</h2>
-        <div class="pre_pic">
-            <!-- <p class="alltext">Preview photo</p> -->
-            <img src="sunset.webp" class="setimg">
+        <div class="pre_pic" id="previewPic">
+            <!-- <img src="sunset.webp" class="setimg"> // Example picture -->
         </div>
-        <button class="selectPhoto alltext">Select photo</button>
+        
+        <input type="file" id="photo_file" accept="image/*" style="opacity: 0; display:none;">
+        <label for="photo_file" class="button selectPhoto alltext">Select photo</label>
         <div class="bottomBar">
             <a href="NormalFead_Page.html"><button class="cancelButton alltext">Cancel</button></a>
             
             <button class="postButton alltext">Post</button>
         </div>
-        <!-- <button class="cancelButton alltext">Cancel</button>
-            <button class="postButton alltext">Post</button> -->
-        
     </div>
+
+    <script src="newPostScript.js"></script>
 </body>
 </html>
