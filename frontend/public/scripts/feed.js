@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Sample data
     const postsData = [
-      { imageUrl: "scripts/test_res/1.png", poser: "p1", time: "12.00", likes: 100,
+      { imageUrl: "scripts/test_res/land.jpeg", poser: "p1", time: "12.00", likes: 100,
         comment:[{commenter:"commenter1", commentText:"i like cat too"},
-                {commenter:"commenter2asdfasdfasdf", commentText:"i dont like cat i like dog alsdjflkajsldfj;lajs"}]},
+                {commenter:"commenter25843275970", commentText:"i dont like cat i like dog alsdjflkajsldfj;lajs"}]},
       { imageUrl: "scripts/test_res/land.jpeg", poser: "p2", time: "50.00", likes: 200,
         comment:[{commenter:"commenter3", commentText:"i like cat too" }]},
       { imageUrl: "test_res/1.png", poser: "p3", time: "5.00", likes: 3,
@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
         commentSection.classList.add("commentSection");
         post.comment.forEach(comment => {
           const singleComment = document.createElement("div");
+          singleComment.classList.add("singleComment");
           const commenterElement = document.createElement("div");
           commenterElement.innerText = comment.commenter;
           const commentTextElement = document.createElement("div");
