@@ -13,16 +13,18 @@
     </div>
 
     <div id="main-box"><!-- username / password -->
-      <input type="text" placeholder="username"></input>
-      <input type="password" placeholder="password"></input>
-      <input type="password" placeholder="confirm password"></input>
+      <input type="text" id="username" placeholder="username" style="color:black;"></input>
+      <input type="password" id="password" placeholder="password" style="color:black;"></input>
+      <input type="password" id="confirm-password" placeholder="confirm password" style="color:black;"></input>
     </div>
 
     <div id="login-box"><!-- response / login btn  -->
       <p class="text" id="response">*response*</p>
-      <div><button id="login-btn">SIGN IN</button></div>
+      <div><button id="login-btn" onclick="valid();">SIGN IN</button></div>
       <p class="text" id="text-before-signin" >Already have account </p><a href="index.html" class="text" id="signin">log in</a>
     </div>
 
-  </div></body>
+  </div>
+  <script src="scripts/signin.js"></script>
+</body>
 </html>

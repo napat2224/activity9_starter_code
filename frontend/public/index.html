@@ -13,18 +13,19 @@
     </div>
 
     <div id="main-box"><!-- username / password -->
-
-      <input type="text" placeholder="username"></input>
-
-      <input type="password" placeholder="password"></input>
+      <input type="text" id="username" placeholder="username" style="color:black;"></input>
+      <input type="password" id="password" placeholder="password" style="color:black;"></input>
     </div>
 
     <div id="login-box"><!-- response / login btn  -->
       <p class="text" id="response">*response*</p>
-      <div><button id="login-btn">LOGIN</button></div>
+      <div><button id="login-btn" onclick="valid();">LOGIN</button></div>
       <p class="text" id="text-before-signin" >Don't have account </p><a href="signin.html" class="text" id="signin">signIn</a>
     </div>
 
 
-  </div></body>
+  </div>
+
+  <script src="scripts/login.js"></script>
+</body>
 </html>

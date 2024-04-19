@@ -16,3 +16,9 @@ document.getElementById('photo_file').addEventListener('change', function(event)
     // Append the container to the preview div
     preview.appendChild(img);
 })
+
+function photoValid() {
+    if(document.getElementById('previewPic').hasChildNodes){
+        location.href = "feed.html";
+    }
+}
