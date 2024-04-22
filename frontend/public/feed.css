@@ -109,6 +109,10 @@ width: 100%;
     color: #FEF3E2;
     /* flex:1; */
 }
+.liked {
+    background-color:#C563DE;
+    color:#FEF3E2;
+}
 .interractSection button {
     display:inline;
     margin:0.3rem;
