@@ -1,15 +1,18 @@
-document.addEventListener("DOMContentLoaded", function() {
+import { getPosts } from "./api.js";
+
+document.addEventListener("DOMContentLoaded", async function() {
     // Sample data
     const username = "user1";
-    const postsData = [
-      { imageUrl: "scripts/test_res/land.jpeg", poser: "p1", time: "12.00", likes: 100,
-        comment:[{commenter:"commenter1", commentText:"i like cat too"},
-                {commenter:"commenter25843275970", commentText:"i dont like cat i like dog alsdjflkajsldfj;lajs"}]},
-      { imageUrl: "scripts/test_res/land.jpeg", poser: "p2", time: "50.00", likes: 200,
-        comment:[{commenter:"commenter3", commentText:"i like cat too" }]},
-      { imageUrl: "test_res/1.png", poser: "p3", time: "5.00", likes: 3,
-        comment:[{commenter:"commenter4", commentText:"i like cat too" }]}
-    ];
+    const postsData = await getPosts();
+    // [
+    //   { imageUrl: "scripts/test_res/land.jpeg", poser: "p1", time: "12.00", likes: 100,
+    //     comment:[{commenter:"commenter1", commentText:"i like cat too"},
+    //             {commenter:"commenter25843275970", commentText:"i dont like cat i like dog alsdjflkajsldfj;lajs"}]},
+    //   { imageUrl: "scripts/test_res/land.jpeg", poser: "p2", time: "50.00", likes: 200,
+    //     comment:[{commenter:"commenter3", commentText:"i like cat too" }]},
+    //   { imageUrl: "test_res/1.png", poser: "p3", time: "5.00", likes: 3,
+    //     comment:[{commenter:"commenter4", commentText:"i like cat too" }]}
+    // ];
 
     // sort data for highligh feed
     if (document.title == "highlight feed") {
@@ -29,14 +32,14 @@ document.addEventListener("DOMContentLoaded", function() {
         // head
         const headerSection = document.createElement("div");
         headerSection.classList.add("headerPost")
-        const poserElement = document.createElement("div");
-        poserElement.classList.add("poser");
-        poserElement.innerText = post.poser;
+        const posterElement = document.createElement("div");
+        posterElement.classList.add("poster");
+        posterElement.innerText = post.poster;
         const timeElement = document.createElement("div");
         timeElement.classList.add("time");
         timeElement.innerText = post.time;
 
-        headerSection.appendChild(poserElement);
+        headerSection.appendChild(posterElement);
         headerSection.appendChild(timeElement);
         postElement.appendChild(headerSection);
 
@@ -69,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
         //comments
         const commentSection = document.createElement("div");
         commentSection.classList.add("commentSection");
-        post.comment.forEach(comment => {
+        post.comments.forEach(comment => {
           const singleComment = document.createElement("div");
           singleComment.classList.add("singleComment");
           const commenterElement = document.createElement("div");

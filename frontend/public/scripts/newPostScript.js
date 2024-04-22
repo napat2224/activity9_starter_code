@@ -1,3 +1,5 @@
+import { handleAddNewPost } from "./post.js";
+
 document.getElementById('photo_file').addEventListener('change', function(event) {
     var file = event.target.files;
     var preview = document.getElementById('previewPic');
@@ -17,8 +19,13 @@ document.getElementById('photo_file').addEventListener('change', function(event)
     preview.appendChild(img);
 })
 
-function photoValid() {
-    if(document.getElementById("previewPic").querySelector('img') !== null){
-        location.href = "feed.html";
-    }
-}
+const username_box = document.getElementById('username');
+username_box.innerText = "account-user";
+
+const addNewPostButton = document.getElementById("add-new-post-btn");
+    addNewPostButton.addEventListener("click", async () => {
+        if(document.getElementById('previewPic').querySelector('img') !== null){
+            await handleAddNewPost();
+            location.href = "feed.html";
+        }
+    });

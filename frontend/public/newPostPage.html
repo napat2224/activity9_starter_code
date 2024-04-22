@@ -10,19 +10,18 @@
     <div class="container" id="mainContainer">
         <!-- <button class="LOGO">LOGO</button> -->
         <h2 class="alltext newPost">New post</h2>
-        <div class="pre_pic" id="previewPic">
-            <!-- <img src="sunset.webp" class="setimg"> // Example picture -->
-        </div>
+        <div id="username"></div>
+        <div class="pre_pic" id="previewPic"></div>
         
         <input type="file" id="photo_file" accept="image/*" style="opacity: 0; display:none;">
         <label for="photo_file" class="button selectPhoto alltext">Select photo</label>
         <div class="bottomBar">
             <a href="feed.html"><button class="cancelButton alltext">Cancel</button></a>
             
-            <button class="postButton alltext" onclick="photoValid();">Post</button>
+            <button id="add-new-post-btn" class="postButton alltext">Post</button>
         </div>
     </div>
 
-    <script src="scripts\newPostScript.js"></script>
+    <script type="module" src="scripts/newPostScript.js"></script>
 </body>
 </html>
