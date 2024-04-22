@@ -1,8 +1,9 @@
-import { BACKEND_URL } from "./config.js";
+//******ToDo: change*******
+export const BACKEND_URL = "http://localhost:3222";
+// import { BACKEND_URL } from "./config.js";
 
 export async function getItems() {
   const items = await fetch(`${BACKEND_URL}/items`).then((r) => r.json());
-
   return items;
 }
 

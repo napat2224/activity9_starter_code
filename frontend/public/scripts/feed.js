@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Sample data
+    const username = "user1";
     const postsData = [
       { imageUrl: "scripts/test_res/land.jpeg", poser: "p1", time: "12.00", likes: 100,
         comment:[{commenter:"commenter1", commentText:"i like cat too"},
@@ -9,7 +10,9 @@ document.addEventListener("DOMContentLoaded", function() {
       { imageUrl: "test_res/1.png", poser: "p3", time: "5.00", likes: 3,
         comment:[{commenter:"commenter4", commentText:"i like cat too" }]}
     ];
-  
+
+    const account = document.getElementById("username");
+    account.innerText = "account:" + username;
     const postsContainer = document.getElementById("postsContainer");
   
     function renderPosts() {
