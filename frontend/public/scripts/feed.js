@@ -1,8 +1,9 @@
 import { getPosts } from "./api.js";
+import { current_User } from "./config.js";
 
 document.addEventListener("DOMContentLoaded", async function() {
     // Sample data
-    const username = "user1";
+    const username = current_User;
     const postsData = await getPosts();
     // [
     //   { imageUrl: "scripts/test_res/land.jpeg", poser: "p1", time: "12.00", likes: 100,

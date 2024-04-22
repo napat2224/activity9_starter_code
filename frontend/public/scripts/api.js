@@ -1,5 +1,5 @@
 //******ToDo: change*******
-export const BACKEND_URL = "http://localhost:3222";
+export const BACKEND_URL = "http://52.206.163.76:3222";
 // import { BACKEND_URL } from "./config.js";
 
 export async function getItems() {
