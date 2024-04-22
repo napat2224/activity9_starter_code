@@ -11,6 +11,10 @@ document.addEventListener("DOMContentLoaded", function() {
         comment:[{commenter:"commenter4", commentText:"i like cat too" }]}
     ];
 
+    // sort data for highligh feed
+
+
+    //render things
     const account = document.getElementById("username");
     account.innerText = "account:" + username;
     const postsContainer = document.getElementById("postsContainer");
