@@ -1,6 +1,10 @@
 import { getPosts } from "./api.js";
 import { current_User } from "./config.js";
 
+function logout(){
+  localStorage.setItem("username",null)
+}
+
 document.addEventListener("DOMContentLoaded", async function() {
     // Sample data
     const username = current_User;
