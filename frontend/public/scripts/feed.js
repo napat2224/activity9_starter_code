@@ -12,7 +12,9 @@ document.addEventListener("DOMContentLoaded", function() {
     ];
 
     // sort data for highligh feed
-
+    if (document.title == "highlight feed") {
+      postsData.sort((postA, postB) => postB.likes - postA.likes);
+    }
 
     //render things
     const account = document.getElementById("username");
