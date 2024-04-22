@@ -11,7 +11,7 @@ export async function handleRegister(){
         confirmpassword : cfpswtoreg,
     };
     const userloggedin = await register(user);
-    if(userloggedin !== "username already use" && userloggedin !== "password not match"){
+    if(userloggedin != "username already use" && userloggedin != "password not match"){
         localStorage.setItem('username',userloggedin.username);
     }
 }
