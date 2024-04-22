@@ -8,8 +8,6 @@
 //   { name: "โปรดปราน บุณยพุกกณะ", _id: 2 },
 //   { name: "ณัฐวุฒิ หนูไฟโรจน์", _id: 3 },
 // ];
-export const current_User = null;
-
 function logout(){
-    current_User = null;
+    localStorage.setItem("username",null)
 }

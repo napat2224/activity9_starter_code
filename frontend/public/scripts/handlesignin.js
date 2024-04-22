@@ -12,6 +12,6 @@ export async function handleRegister(){
     };
     const userloggedin = await register(user);
     if(userloggedin !== "username already use" && userloggedin !== "password not match"){
-        current_User = userloggedin.username;
+        localStorage.setItem('username',userloggedin.username);
     }
 }

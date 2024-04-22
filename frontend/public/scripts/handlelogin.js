@@ -10,7 +10,7 @@ export async function handleLogin(){
     };
     const userloggedin = await login(user);
     if(userloggedin !== "user not found" && userloggedin !== "wrong password"){
-        current_User = userloggedin.username;
+        localStorage.setItem('username',userloggedin.username);
     }
     
 }
