@@ -58,3 +58,27 @@ export async function getPosts() {
   }).then((r) => r.json());
   return posts;
 }
+
+//for user reg and login
+export async function register(userdata){
+  const user = await fetch(`${BACKEND_URL}/auth/register`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userdata),
+  });
+
+  return user;
+}
+
+export async function login(userdata){
+  const user = await fetch(`${BACKEND_URL}/auth/login`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userdata),
+  });
+  return user;
+}
