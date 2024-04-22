@@ -18,7 +18,7 @@ document.getElementById('photo_file').addEventListener('change', function(event)
 })
 
 function photoValid() {
-    if(document.getElementById('previewPic').hasChildNodes){
+    if(document.getElementById("previewPic").querySelector('img') !== null){
         location.href = "feed.html";
     }
 }
