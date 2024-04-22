@@ -40,3 +40,20 @@ export async function createMember(member) {
 export async function deleteMember(id, item) {
   // TODO4: implement this function
 }
+
+export async function addNewPost(post) {
+  await fetch(`${BACKEND_URL}/posts`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(post),
+  });
+}
+
+export async function getPosts() {
+  const posts = await fetch(`${BACKEND_URL}/posts`, {
+    method: "GET",
+  }).then((r) => r.json());
+  return posts;
+}

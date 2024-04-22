@@ -1,19 +1,26 @@
 import express from "express";
 const router = express.Router();
-import Post from"../models/Post.js";
+import Post from"../models/postModel.js";
 import User from "../models/Users.js";
 
-//create a post
+import * as postController from "../controllers/postController.js";
 
-router.post("/", async (req, res) => {
-  const newPost = new Post(req.body);
+//create a post
+router.post("/", postController.addNewPost);
+
+//get all posts
+router.get("/", postController.getPosts);
+
+//get a post
+router.get("/:id", async (req, res) => {
   try {
-    const savedPost = await newPost.save();
-    res.status(200).json(savedPost);
+    const post = await Post.findById(req.params.id);
+    res.status(200).json(post);
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
 //update a post
 
 router.put("/:id", async (req, res) => {
@@ -56,16 +63,6 @@ router.put("/:id/like", async (req, res) => {
       await post.updateOne({ $pull: { likes: req.body.userId } });
       res.status(200).json("The post has been disliked");
     }
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-//get a post
-
-router.get("/:id", async (req, res) => {
-  try {
-    const post = await Post.findById(req.params.id);
-    res.status(200).json(post);
   } catch (err) {
     res.status(500).json(err);
   }

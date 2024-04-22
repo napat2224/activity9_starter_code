@@ -6,7 +6,7 @@ import MemberRoute from "./routes/memberRoute.js";
 
 import userRoute from "./routes/users.js";
 import authRoute from "./routes/auth.js";
-import postRoute from "./routes/posts.js";
+import postRoute from "./routes/postRoute.js";
 
 const app = express();
 
