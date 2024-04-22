@@ -9,7 +9,7 @@ export async function handleLogin(){
         password : pswtologin,
     };
     const userloggedin = await login(user);
-    if(userloggedin !== "user not found" && userloggedin !== "wrong password"){
+    if(userloggedin != "user not found" && userloggedin != "wrong password"){
         localStorage.setItem('username',userloggedin.username);
     }
     

@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", async function() {
     const username = localStorage.getItem("username");
     const postsData = await getPosts();
     postsData.reverse();
-
     // [
     //   { imageUrl: "scripts/test_res/land.jpeg", poser: "p1", time: "12.00", likes: 100,
     //     comment:[{commenter:"commenter1", commentText:"i like cat too"},
