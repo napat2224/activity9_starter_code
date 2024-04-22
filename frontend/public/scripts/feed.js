@@ -3,7 +3,7 @@ import { getPosts } from "./api.js";
 document.addEventListener("DOMContentLoaded", async function() {
     // Sample data
     const username = "user1";
-    const postsData = getPosts();
+    const postsData = await getPosts();
     // [
     //   { imageUrl: "scripts/test_res/land.jpeg", poser: "p1", time: "12.00", likes: 100,
     //     comment:[{commenter:"commenter1", commentText:"i like cat too"},
