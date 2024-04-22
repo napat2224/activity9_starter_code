@@ -17,6 +17,9 @@ document.getElementById('photo_file').addEventListener('change', function(event)
     preview.appendChild(img);
 })
 
+const username_box = document.getElementById('username');
+username_box.innerText = "account-user";
+
 function photoValid() {
     if(document.getElementById('previewPic').querySelector('img') !== null){
         location.href = "feed.html";
