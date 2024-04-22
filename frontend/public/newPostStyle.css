@@ -31,6 +31,16 @@ body {
     margin: 200 auto;
 }
 
+#username {
+    color: #FEF3E2;
+    font-weight: bold;
+    font-size: 20px;
+    align-self: center;
+    max-width: 630px;
+    width: 100%;
+    margin: 3vw;
+}
+
 .pre_pic {
     background-color:#25262C;
     font-size:14px;

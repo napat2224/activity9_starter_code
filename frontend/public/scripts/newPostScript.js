@@ -19,10 +19,11 @@ document.getElementById('photo_file').addEventListener('change', function(event)
     preview.appendChild(img);
 })
 
-const addNewPostButton = document.getElementById("add-new-post-btn");
-    addNewPostButton.addEventListener("click", async () => {
-        if(document.getElementById('previewPic').hasChildNodes){
-            await handleAddNewPost();
-            location.href = "feed.html";
-        }
-    });
+const username_box = document.getElementById('username');
+username_box.innerText = "account-user";
+
+function photoValid() {
+    if(document.getElementById('previewPic').querySelector('img') !== null){
+        location.href = "feed.html";
+    }
+}

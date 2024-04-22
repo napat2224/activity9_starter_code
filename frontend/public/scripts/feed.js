@@ -2,17 +2,25 @@ import { getPosts } from "./api.js";
 
 document.addEventListener("DOMContentLoaded", async function() {
     // Sample data
-    const postsData = await getPosts();
-    // [
-    //   { imageUrl: "scripts/test_res/land.jpeg", poster: "p1", time: "12.00", likes: 100,
-    //     comments:[{commenter:"commenter1", commentText:"i like cat too"},
-    //             {commenter:"commenter25843275970", commentText:"i dont like cat i like dog alsdjflkajsldfj;lajs"}]},
-    //   { imageUrl: "scripts/test_res/land.jpeg", poster: "p2", time: "50.00", likes: 200,
-    //     comments:[{commenter:"commenter3", commentText:"i like cat too" }]},
-    //   { imageUrl: "test_res/1.png", poster: "p3", time: "5.00", likes: 3,
-    //     comments:[{commenter:"commenter4", commentText:"i like cat too" }]}
-    // ];
-  
+    const username = "user1";
+    const postsData = [
+      { imageUrl: "scripts/test_res/land.jpeg", poser: "p1", time: "12.00", likes: 100,
+        comment:[{commenter:"commenter1", commentText:"i like cat too"},
+                {commenter:"commenter25843275970", commentText:"i dont like cat i like dog alsdjflkajsldfj;lajs"}]},
+      { imageUrl: "scripts/test_res/land.jpeg", poser: "p2", time: "50.00", likes: 200,
+        comment:[{commenter:"commenter3", commentText:"i like cat too" }]},
+      { imageUrl: "test_res/1.png", poser: "p3", time: "5.00", likes: 3,
+        comment:[{commenter:"commenter4", commentText:"i like cat too" }]}
+    ];
+
+    // sort data for highligh feed
+    if (document.title == "highlight feed") {
+      postsData.sort((postA, postB) => postB.likes - postA.likes);
+    }
+
+    //render things
+    const account = document.getElementById("username");
+    account.innerText = "account:" + username;
     const postsContainer = document.getElementById("postsContainer");
   
     function renderPosts() {

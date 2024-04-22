@@ -14,12 +14,25 @@ body {
     background-color: #25262C;
     padding-top: 0.3rem;
     z-index: 99;
+    display: flex;
 }
 
 #top-bar a {
     margin-top:0.3rem;
-}
+    flex:1;
+    display: inline;
 
+}
+#top-bar :nth-child(2) {
+    flex:2;
+}
+#top-bar #username {
+    /* background-color: #C563DE; */
+    color: #FEF3E2;
+    flex:1;
+    text-align: right;
+    margin-right: 1.3rem;
+}
 
 #btm-bar {
     overflow: hidden;
