@@ -73,6 +73,10 @@ document.addEventListener("DOMContentLoaded", async function() {
         const interactSection = document.createElement("div");
         interactSection.classList.add("interractSection");
         const likeBtn = document.createElement("button");
+        //set liked btn
+        if (post.likes.includes(username)) {
+          likeBtn.classList.add("liked");
+        }
         likeBtn.innerText = "like";
         // likeBtn.setAttribute('id', 'ไอดี');
         likeBtn.addEventListener("click", () => likeDisLikePost(post._id, username));

@@ -38,7 +38,7 @@ document.getElementById('photo_file').addEventListener('change', function(event)
         img.style.maxHeight = '430px'
         img.style.alignSelf = 'center';
         img.style.verticalAlign = 'middle';
-        // console.log(img.src);
+        console.log(img.src);
 
     // Append the container to the preview div
         preview.appendChild(img);

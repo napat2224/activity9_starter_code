@@ -45,11 +45,13 @@ export const likeDisLikePost = async (req, res) => {
     const post = await Post.findById(req.params.id);
     if (!post.likes.includes(req.body.userId)) {
       await post.updateOne({ $push: { likes: req.body.userId } });
-      post.likeNumber = post.likes.length;
+      // post.likeNumber = post.likes.length;
+      await post.updateOne({ likeNumber: post.likes.length });
       res.status(200).json("The post has been liked");
-    } else {
+    } 
+    else {
       await post.updateOne({ $pull: { likes: req.body.userId } });
-      post.likeNumber = post.likes.length;
+      await post.updateOne({ likeNumber: post.likes.length });
       res.status(200).json("The post has been disliked");
     }
   } catch (err) {
