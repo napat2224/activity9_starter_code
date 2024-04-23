@@ -62,8 +62,10 @@ document.addEventListener("DOMContentLoaded", async function() {
 
         // Convert buffer to Base64 string
         const base64String = buffer.toString('base64');
-        // imageElement.src= `data:image/${post.imageUrl.contentType};base64,${base64String}`;
-        imageElement.src = base64String;
+        console.log("base64String:");
+        console.log(base64String);
+        imageElement.src= `data:image/${post.imageUrl.contentType};base64,${base64String}`;
+        // imageElement.src = base64String;
 
         postElement.appendChild(imageElement);
 
