@@ -6,5 +6,5 @@ app.use(express.static("public"));
 
 const PORT = 3221;
 app.listen(PORT, "0.0.0.0", () => {
-  console.log(`Frontend Server ready at http://52.206.163.76:${PORT}`);
+  console.log(`Frontend Server ready at http://34.196.111.214:${PORT}`);
 });

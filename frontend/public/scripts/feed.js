@@ -1,5 +1,6 @@
-import { getPosts } from "./api.js";
-import { current_User } from "./config.js";
+import { getPosts, likeDisLikePost } from "./api.js";
+// import { current_User } from "./config.js";
+// import { handleLikeDisLikePost } from "./post.js";
 
 function logout(){
   localStorage.setItem("username",null)
@@ -7,7 +8,7 @@ function logout(){
 
 document.addEventListener("DOMContentLoaded", async function() {
     // Sample data
-    const username = current_User;
+    const username = localStorage.getItem('username');
     const postsData = await getPosts();
     // [
     //   { imageUrl: "scripts/test_res/land.jpeg", poser: "p1", time: "12.00", likes: 100,
@@ -21,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async function() {
 
     // sort data for highligh feed
     if (document.title == "highlight feed") {
-      postsData.sort((postA, postB) => postB.likes - postA.likes);
+      postsData.sort((postA, postB) => postB.likeNumber - postA.likeNumber);
     }
 
     //render things
@@ -59,9 +60,11 @@ document.addEventListener("DOMContentLoaded", async function() {
         interactSection.classList.add("interractSection");
         const likeBtn = document.createElement("button");
         likeBtn.innerText = "like";
+        likeBtn.setAttribute('id', 'ไอดี');
+        likeBtn.addEventListener("click", () => likeDisLikePost(post._id, username));
         const likesElement = document.createElement("div");
         likesElement.classList.add("likes");
-        likesElement.innerText = post.likes + "likes";
+        likesElement.innerText = post.likeNumber + "likes";
         const newCommentElement = document.createElement("input");
         newCommentElement.type = "text";
         newCommentElement.placeholder = "Add new comment";
