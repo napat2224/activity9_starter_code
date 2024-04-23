@@ -10,9 +10,18 @@ export async function handleRegister(){
         confirmpassword : cfpswtoreg,
     };
     const userloggedin = await register(user);
-    if(await userloggedin.username == "erruser"){
-        localStorage.setItem('username',"null");
-    }else{
+    // if(await userloggedin.username == "erruser"){
+    //     localStorage.setItem('username',"null");
+    // }else{
+    //     localStorage.setItem('username',await userloggedin.username);
+    // }
+    if(await userloggedin.username != null){
+        console.log(localStorage.getItem('username'));
         localStorage.setItem('username',await userloggedin.username);
+        console.log(localStorage.getItem('username'));
+    }else{
+        console.log(localStorage.getItem('username'));
+        localStorage.removeItem('username');
+        console.log(localStorage.getItem('username'));
     }
 }

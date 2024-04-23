@@ -1,12 +1,15 @@
 import { getPosts, likeDisLikePost } from "./api.js";
+import { handleAddComment } from "./post.js";
 
 function logout(){
-  localStorage.setItem("username","null");
+  localStorage.removeItem("username");
 }
 
 document.addEventListener("DOMContentLoaded", async function() {
     // Sample data
+    console.log(localStorage.getItem('username'));
     const username = localStorage.getItem("username");
+    console.log(localStorage.getItem('username'));
     const postsData = await getPosts();
     
     postsData.reverse();
@@ -27,7 +30,7 @@ document.addEventListener("DOMContentLoaded", async function() {
 
     //render things
     const account = document.getElementById("username");
-    account.innerText = "account:",username;
+    account.innerText = "account:"+username;
     const postsContainer = document.getElementById("postsContainer");
   
     function renderPosts() {
@@ -94,7 +97,8 @@ document.addEventListener("DOMContentLoaded", async function() {
         newCommentElement.placeholder = "Add new comment";
         const sendCommentBtn = document.createElement("button");
         sendCommentBtn.innerText = "send";
-        // sendCommentBtn.addEventListener("click", () => handleAddComment(`${i}`, username));
+        // test username as nam
+        sendCommentBtn.addEventListener("click", () => handleAddComment(post._id, `${i}`, 'nam'));
         
         interactSection.appendChild(likesElement);
         interactSection.appendChild(likeBtn);

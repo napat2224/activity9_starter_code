@@ -21,7 +21,13 @@ loginButton.addEventListener("click", async () => {
     else{
         if(password === confirm_password){
             await handleRegister();
-            if(localStorage.getItem('username') != "null") location.href = "feed.html";
+            console.log(localStorage.getItem('username'));
+            // if(localStorage.getItem('username') != "null") location.href = "feed.html";
+            if(localStorage.getItem('username') == null){}
+            else{
+                console.log(localStorage.getItem('username'));
+                location.href = "feed.html";
+            }
         }else alert('Passwords are not matching!!!');
     }
 });

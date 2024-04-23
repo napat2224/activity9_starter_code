@@ -42,7 +42,7 @@ export async function deleteMember(id, item) {
   // TODO4: implement this function
 }
 
-//add Post / get all / likeDisLike
+//add Post / get all / likeDisLike / addComment
 export async function addNewPost(post) {
   await fetch(`${BACKEND_URL}/posts`, {
     method: "POST",
@@ -71,6 +71,16 @@ export async function likeDisLikePost(id, userId) {
   // console.log(res);
 }
 
+export async function addComment(id, comment) {
+  const res = await fetch(`${BACKEND_URL}/posts/${id}/comment`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(comment),
+  });
+}
+
 //for user reg and login
 export async function register(userdata){
   const user = await fetch(`${BACKEND_URL}/auth/register`, {
@@ -79,7 +89,7 @@ export async function register(userdata){
       "Content-Type": "application/json",
     },
     body: JSON.stringify(userdata),
-  });
+  }).then((r) => r.json());
 
   return user;
 }
@@ -91,6 +101,6 @@ export async function login(userdata){
       "Content-Type": "application/json",
     },
     body: JSON.stringify(userdata),
-  });
+  }).then((r) => r.json());
   return user;
 }
