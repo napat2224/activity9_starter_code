@@ -82,7 +82,7 @@ width: 100%;
     margin-bottom: 0.5rem;
 }
 
-.poser {
+.poster {
     color: #FEF3E2;
     font-weight: bold;
     display: inline;
@@ -145,4 +145,9 @@ input {
     color: black;
     background-color: #FEF3E2;
     border-radius: 8px;
+}
+
+.liked {
+    background-color:#C563DE;
+    color:#FEF3E2;
 }
