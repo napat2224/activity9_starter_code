@@ -13,7 +13,7 @@ loginButton.addEventListener("click", async () => {
     }
     else{
         await handleLogin();
-        if(localStorage.getItem('username')!= null) location.href = "feed.html";
+        if(localStorage.getItem('username')!= "null") location.href = "feed.html";
     }
 });
 function valid(){
