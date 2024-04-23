@@ -10,7 +10,11 @@ export async function handleLogin(){
     };
     const userloggedin = await login(user);
     //if(userloggedin.username != null){
-        localStorage.setItem('username',await userloggedin.username);
+        if(await userloggedin.username == "erruser"){
+            localStorage.setItem('username',"null");
+        }else{
+            localStorage.setItem('username',await userloggedin.username);
+        }
     //}
     
 }
