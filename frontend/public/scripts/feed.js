@@ -1,7 +1,7 @@
 import { getPosts, likeDisLikePost } from "./api.js";
 
 function logout(){
-  localStorage.setItem("username",null)
+  localStorage.removeItem("username")
 }
 
 document.addEventListener("DOMContentLoaded", async function() {
@@ -55,7 +55,12 @@ document.addEventListener("DOMContentLoaded", async function() {
         //image
         const imageElement = document.createElement("img");
         // convert post.imageUrl.data from Binary Buffer to Base64String 
-        const base64String = btoa(String.fromCharCode(...new Uint8Array(post.imageUrl.data)));
+        // const base64String = btoa(String.fromCharCode(...new Uint8Array(post.imageUrl.data)));
+        // Assuming you have a buffer object
+        const buffer = Buffer.from(post.imageUrl.data);
+
+        // Convert buffer to Base64 string
+        const base64String = buffer.toString('base64');
         imageElement.src= `data:image/${post.imageUrl.contentType};base64,${base64String}`;
 
         postElement.appendChild(imageElement);
