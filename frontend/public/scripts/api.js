@@ -1,5 +1,5 @@
 //******ToDo: change*******
-export const BACKEND_URL = "http://52.206.163.76:3222";
+export const BACKEND_URL = "http://34.196.111.214:3222";
 // import { BACKEND_URL } from "./config.js";
 
 export async function getItems() {
@@ -42,6 +42,7 @@ export async function deleteMember(id, item) {
   // TODO4: implement this function
 }
 
+//add Post / get all / likeDisLike
 export async function addNewPost(post) {
   await fetch(`${BACKEND_URL}/posts`, {
     method: "POST",
@@ -57,6 +58,17 @@ export async function getPosts() {
     method: "GET",
   }).then((r) => r.json());
   return posts;
+}
+
+export async function likeDisLikePost(id, userId) {
+  const res = await fetch(`${BACKEND_URL}/posts/${id}/like`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userId),
+  });
+  console.log(res);
 }
 
 //for user reg and login

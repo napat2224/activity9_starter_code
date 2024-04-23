@@ -1,6 +1,5 @@
 import { register } from "./api.js"
 
-
 export async function handleRegister(){
     const usertoreg = document.getElementById("username").value;
     const pswtoreg = document.getElementById("password").value;

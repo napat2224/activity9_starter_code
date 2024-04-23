@@ -27,6 +27,7 @@ function valid(){
         alert('Please input Password!');
     }
     else{
+        await localStorage.setItem('username', document.getElementById('username').value);
         location.href = "feed.html";
     }
-}
+});

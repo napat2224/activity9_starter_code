@@ -1,6 +1,6 @@
 import { handleAddNewPost } from "./post.js";
 
-document.getElementById('photo_file').addEventListener('change', function(event) {
+document.getElementById('photo_file').addEventListener('change', async function(event) {
     var file = event.target.files;
     var preview = document.getElementById('previewPic');
     
@@ -17,6 +17,15 @@ document.getElementById('photo_file').addEventListener('change', function(event)
 
     // Append the container to the preview div
     preview.appendChild(img);
+
+    var fileupload = file[0];
+    await fileupload.mv('test_res',(err) => {
+        if (err) {
+          console.error(err);
+          return res.status(500).send('Error uploading image.');
+        }
+        res.send('Image uploaded successfully!');
+      });
 })
 
 const username_box = document.getElementById('username');

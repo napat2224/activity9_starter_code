@@ -1,8 +1,7 @@
-import { addNewPost } from "./api.js";
+import { addNewPost, likeDisLikePost } from "./api.js";
 
 export async function handleAddNewPost() {
     const picToAdd = document.getElementById('previewPic').childNodes[0];
-    const posterToAdd = localStorage.getItem('username');
   
     const payload = {
       imageUrl: picToAdd.src,
@@ -12,3 +11,9 @@ export async function handleAddNewPost() {
     
     await addNewPost(payload);
   }
+
+  // export async function handleLikeDisLikePost(id) {
+  //   const userId =  localStorage.getItem('username');
+    
+  //   await likeDisLikePost(id, userId);
+  // }
