@@ -12,8 +12,8 @@ const CommentSchema = new mongoose.Schema({
 const PostSchema = new mongoose.Schema(
   {
     imageUrl: { 
-      data: Buffer, 
-      contentType: String 
+      type : String,
+      required: true,
     },
     poster: {
       type: String,
