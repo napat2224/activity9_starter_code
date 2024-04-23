@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     // Sample data
     const username = localStorage.getItem("username");
     const postsData = await getPosts();
+    
     postsData.reverse();
     // [
     //   { imageUrl: "scripts/test_res/land.jpeg", poser: "p1", time: "12.00", likes: 100,
@@ -27,7 +28,7 @@ document.addEventListener("DOMContentLoaded", async function() {
 
     //render things
     const account = document.getElementById("username");
-    account.innerText = "account:" + username;
+    account.innerText = "account:",username;
     const postsContainer = document.getElementById("postsContainer");
   
     function renderPosts() {
@@ -36,6 +37,8 @@ document.addEventListener("DOMContentLoaded", async function() {
       postsData.forEach(post => postsDataArray.push(post));
       for (let i = 0; i < postsDataArray.length; i++) {
         let post = postsDataArray[i];
+        console.log("Image Data:", post.imageUrl.data);
+        console.log("Content Type:", post.imageUrl.contentType);
         const postElement = document.createElement("div");
         postElement.classList.add("postBox");
         
@@ -63,8 +66,10 @@ document.addEventListener("DOMContentLoaded", async function() {
 
         // Convert buffer to Base64 string
         const base64String = buffer.toString('base64');
-        // imageElement.src= `data:image/${post.imageUrl.contentType};base64,${base64String}`;
-        imageElement.src = base64String;
+        console.log("base64String:");
+        console.log(base64String);
+        imageElement.src= `data:image/${post.imageUrl.contentType};base64,${base64String}`;
+        // imageElement.src = base64String;
 
         postElement.appendChild(imageElement);
 
