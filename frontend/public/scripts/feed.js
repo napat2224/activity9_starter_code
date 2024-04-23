@@ -1,7 +1,7 @@
 import { getPosts, likeDisLikePost } from "./api.js";
 
 function logout(){
-  localStorage.setItem("username","null");
+  localStorage.removeItem("username");
 }
 
 document.addEventListener("DOMContentLoaded", async function() {

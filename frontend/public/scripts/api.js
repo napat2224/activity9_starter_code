@@ -1,5 +1,5 @@
 //******ToDo: change*******
-export const BACKEND_URL = "http://34.196.111.214:3222";
+export const BACKEND_URL = "http://localhost:3222";
 // import { BACKEND_URL } from "./config.js";
 
 export async function getItems() {
@@ -79,7 +79,7 @@ export async function register(userdata){
       "Content-Type": "application/json",
     },
     body: JSON.stringify(userdata),
-  });
+  }).then((r) => r.json());
 
   return user;
 }
@@ -91,6 +91,6 @@ export async function login(userdata){
       "Content-Type": "application/json",
     },
     body: JSON.stringify(userdata),
-  });
+  }).then((r) => r.json());;
   return user;
 }

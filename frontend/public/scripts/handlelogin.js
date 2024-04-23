@@ -9,12 +9,10 @@ export async function handleLogin(){
         password : pswtologin,
     };
     const userloggedin = await login(user);
-    //if(userloggedin.username != null){
-        if(await userloggedin.username == "erruser"){
-            localStorage.setItem('username',"null");
-        }else{
-            localStorage.setItem('username',await userloggedin.username);
-        }
-    //}
+    if(await userloggedin.username != null){   
+        localStorage.setItem('username',await userloggedin.username);
+    }else{
+        localStorage.removeItem('username');
+    }
     
 }

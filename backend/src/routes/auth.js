@@ -22,18 +22,18 @@ router.post("/register", async (req, res) => {
           res.status(200).json(user);
         }else{
           console.log("already have user");
-          res.status(200).json({ username : "erruser" });
+          res.status(200).json({ username : null });
         }
           
     }else{
       console.log("psw err");
-      res.status(200).json({ username : "erruser" });
+      res.status(200).json({ username :  null });
     }
     
   } catch (err) {
     //res.status(400).json("cant create acc");
     console.log("other")
-    res.status(500).json({ username : "erruser" })
+    res.status(500).json({ username :  null})
   }
 });
 
@@ -41,17 +41,17 @@ router.post("/register", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const user = await User.findOne({ username: req.body.username });
-    !user && res.status(400).json({ username : "erruser" })
+    !user && res.status(400).json({ username :  null })
     if (user.password == req.body.password){
         res.status(200).json(user)
     }
     else{
-        res.status(200).json({ username : "erruser" })
+        res.status(200).json({ username : null })
     }
     
   } catch (err) {
     
-    res.status(500).json({ username : "erruser" })
+    res.status(500).json({ username :  null })
     
   }
 });
