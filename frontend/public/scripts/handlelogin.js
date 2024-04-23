@@ -1,5 +1,5 @@
 import { login } from "./api.js"
-import { current_User } from "./config.js"
+// import { current_User } from "./config.js"
 
 export async function handleLogin(){
     const usertologin = document.getElementById("username");

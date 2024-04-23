@@ -1,5 +1,5 @@
 import { register } from "./api.js"
-import { current_User } from "./config.js"
+// import { current_User } from "./config.js"
 
 export async function handleRegister(){
     const usertoreg = document.getElementById("username");
