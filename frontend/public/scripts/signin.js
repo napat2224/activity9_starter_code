@@ -24,7 +24,10 @@ loginButton.addEventListener("click", async () => {
             console.log(localStorage.getItem('username'));
             // if(localStorage.getItem('username') != "null") location.href = "feed.html";
             if(localStorage.getItem('username') == null){}
-            else{location.href = "feed.html";}
+            else{
+                console.log(localStorage.getItem('username'));
+                location.href = "feed.html";
+            }
         }else alert('Passwords are not matching!!!');
     }
 });
