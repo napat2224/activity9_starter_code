@@ -93,7 +93,8 @@ document.addEventListener("DOMContentLoaded", async function() {
         newCommentElement.placeholder = "Add new comment";
         const sendCommentBtn = document.createElement("button");
         sendCommentBtn.innerText = "send";
-        sendCommentBtn.addEventListener("click", () => handleAddComment(post._id, `${i}`, username));
+        // test username as nam
+        sendCommentBtn.addEventListener("click", () => handleAddComment(post._id, `${i}`, 'nam'));
         
         interactSection.appendChild(likesElement);
         interactSection.appendChild(likeBtn);
