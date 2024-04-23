@@ -85,7 +85,10 @@ document.addEventListener("DOMContentLoaded", async function() {
         }
         likeBtn.innerText = "like";
         // likeBtn.setAttribute('id', 'ไอดี');
-        likeBtn.addEventListener("click", () => likeDisLikePost(post._id, username));
+        likeBtn.addEventListener("click", async () => {
+          await likeDisLikePost(post._id, username);
+          window.location.reload();
+        });
         const likesElement = document.createElement("div");
         likesElement.classList.add("likes");
         likesElement.innerText = post.likeNumber + "likes";
@@ -96,7 +99,10 @@ document.addEventListener("DOMContentLoaded", async function() {
         const sendCommentBtn = document.createElement("button");
         sendCommentBtn.innerText = "send";
         // test username as nam
-        sendCommentBtn.addEventListener("click", () => handleAddComment(post._id, `${i}`, username));
+        sendCommentBtn.addEventListener("click", async () => {
+          await handleAddComment(post._id, `${i}`, username);
+          window.location.reload();
+        });
         
         interactSection.appendChild(likesElement);
         interactSection.appendChild(likeBtn);
