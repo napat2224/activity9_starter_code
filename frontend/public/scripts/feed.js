@@ -39,8 +39,8 @@ document.addEventListener("DOMContentLoaded", async function() {
       postsData.forEach(post => postsDataArray.push(post));
       for (let i = 0; i < postsDataArray.length; i++) {
         let post = postsDataArray[i];
-        console.log("Image Data:", post.imageUrl.data);
-        console.log("Content Type:", post.imageUrl.contentType);
+        // console.log("Image Data:", post.imageUrl.data);
+        // console.log("Content Type:", post.imageUrl.contentType);
         const postElement = document.createElement("div");
         postElement.classList.add("postBox");
         
@@ -64,13 +64,13 @@ document.addEventListener("DOMContentLoaded", async function() {
         // const base64String = btoa(String.fromCharCode(...new Uint8Array(post.imageUrl.data)));
         // Assuming you have a buffer object
         // const buffer = Buffer.from(post.imageUrl.data);
-        const buffer = post.imageUrl.data;
+        // const buffer = post.imageUrl.data;
 
         // Convert buffer to Base64 string
-        const base64String = buffer.toString('base64');
-        console.log("base64String:");
-        console.log(base64String);
-        imageElement.src= `data:image/${post.imageUrl.contentType};base64,${base64String}`;
+        // const base64String = buffer.toString('base64');
+        // console.log("base64String:");
+        // console.log(base64String);
+        imageElement.src= post.imageUrl;
         // imageElement.src = base64String;
 
         postElement.appendChild(imageElement);
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         const sendCommentBtn = document.createElement("button");
         sendCommentBtn.innerText = "send";
         // test username as nam
-        sendCommentBtn.addEventListener("click", () => handleAddComment(post._id, `${i}`, 'nam'));
+        sendCommentBtn.addEventListener("click", () => handleAddComment(post._id, `${i}`, username));
         
         interactSection.appendChild(likesElement);
         interactSection.appendChild(likeBtn);

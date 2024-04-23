@@ -3,7 +3,7 @@ import { addComment, addNewPost } from "./api.js";
 export async function handleAddNewPost() {
   const picToAdd = document.getElementById('previewPic').childNodes[0];
   const payload = {
-    imageBase64: picToAdd.src,
+    imageUrl: picToAdd.src,
     poster: localStorage.getItem('username'),
     //poster: "Nam",
   };
