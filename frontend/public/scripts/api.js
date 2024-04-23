@@ -66,9 +66,9 @@ export async function likeDisLikePost(id, userId) {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(userId),
+    body: JSON.stringify({userId}),
   });
-  console.log(res);
+  // console.log(res);
 }
 
 //for user reg and login

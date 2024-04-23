@@ -2,7 +2,23 @@ import Post from "../models/postModel.js";
 
 export const addNewPost = async (req, res) => {
   try {
-    const newPost = new Post(req.body);
+    const newPost = new Post();
+
+    const img = req.body.imageBase64;
+
+    // const data = img['$ngfDataUrl'];
+    // console.log(data);
+    const split = img.split(',');
+    const splitForType = split[0].split('/');
+    const splitForImgType = splitForType[1].split(';');
+    const imageDataType = splitForImgType[0];
+    const base64String = split[1];
+
+    newPost.imageUrl.data = Buffer.from(base64String, 'base64');
+    newPost.imageUrl.contentType = imageDataType;
+    newPost.poster = req.body.poster;
+    console.log(newPost.imageUrl.data);
+
     await newPost.save();
 
     res.status(200).json({ message: "Post Saved" });

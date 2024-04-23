@@ -2,9 +2,8 @@ import { addNewPost, likeDisLikePost } from "./api.js";
 
 export async function handleAddNewPost() {
     const picToAdd = document.getElementById('previewPic').childNodes[0];
-  
     const payload = {
-      imageUrl: picToAdd.src,
+      imageBase64: picToAdd.src,
       poster: localStorage.getItem('username'),
       //poster: "Nam",
     };

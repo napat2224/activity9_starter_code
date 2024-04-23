@@ -12,7 +12,7 @@ const app = express();
 const FRONTEND_URL = "http://34.196.111.214:3221"
 
 // body-parser
-app.use(express.json());
+app.use(express.json({ limit: 2000000 }));
 app.use(express.urlencoded({ extended: true }));
 
 // allow request from other origin (Frontend which is at different port)

@@ -54,7 +54,9 @@ document.addEventListener("DOMContentLoaded", async function() {
 
         //image
         const imageElement = document.createElement("img");
-        imageElement.src = post.imageUrl;
+        // convert post.imageUrl.data from Binary Buffer to Base64String 
+        const base64String = btoa(String.fromCharCode(...new Uint8Array(post.imageUrl.data)));
+        imageElement.src= `data:image/${post.imageUrl.contentType};base64,${base64String}`;
 
         postElement.appendChild(imageElement);
 
