@@ -13,6 +13,7 @@ export async function handleLogin(){
         localStorage.setItem('username',await userloggedin.username);
     }else{
         localStorage.removeItem('username');
+        alert(userloggedin.message);
     }
     
 }
