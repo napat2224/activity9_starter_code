@@ -22,6 +22,8 @@ export async function handleRegister(){
     }else{
         console.log(localStorage.getItem('username'));
         localStorage.removeItem('username');
+        alert(userloggedin.message);
+        console.log(toString(userloggedin.message));
         console.log(localStorage.getItem('username'));
     }
 }
