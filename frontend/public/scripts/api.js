@@ -101,6 +101,6 @@ export async function login(userdata){
       "Content-Type": "application/json",
     },
     body: JSON.stringify(userdata),
-  }).then((r) => r.json());;
+  }).then((r) => r.json());
   return user;
 }

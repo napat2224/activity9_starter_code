@@ -18,6 +18,7 @@ export async function handleRegister(){
     if(await userloggedin.username != null){
         console.log(localStorage.getItem('username'));
         localStorage.setItem('username',await userloggedin.username);
+        console.log(localStorage.getItem('username'));
     }else{
         console.log(localStorage.getItem('username'));
         localStorage.removeItem('username');

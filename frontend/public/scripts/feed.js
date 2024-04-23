@@ -7,7 +7,9 @@ function logout(){
 
 document.addEventListener("DOMContentLoaded", async function() {
     // Sample data
+    console.log(localStorage.getItem('username'));
     const username = localStorage.getItem("username");
+    console.log(localStorage.getItem('username'));
     const postsData = await getPosts();
     
     postsData.reverse();
@@ -28,7 +30,7 @@ document.addEventListener("DOMContentLoaded", async function() {
 
     //render things
     const account = document.getElementById("username");
-    account.innerText = "account:",username;
+    account.innerText = "account:"+username;
     const postsContainer = document.getElementById("postsContainer");
   
     function renderPosts() {
