@@ -1,4 +1,5 @@
 import { getPosts, likeDisLikePost } from "./api.js";
+import { handleAddComment } from "./post.js";
 
 function logout(){
   localStorage.setItem("username","null");
@@ -87,7 +88,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         newCommentElement.placeholder = "Add new comment";
         const sendCommentBtn = document.createElement("button");
         sendCommentBtn.innerText = "send";
-        // sendCommentBtn.addEventListener("click", () => handleAddComment(`${i}`, username));
+        sendCommentBtn.addEventListener("click", () => handleAddComment(post._id, `${i}`, username));
         
         interactSection.appendChild(likesElement);
         interactSection.appendChild(likeBtn);

@@ -14,6 +14,9 @@ router.get("/", postController.getPosts);
 //like / dislike a post
 router.put("/:id/like", postController.likeDisLikePost);
 
+//add a comment
+router.put("/:id/comment", postController.addComment);
+
 //get a post
 router.get("/:id", async (req, res) => {
   try {
