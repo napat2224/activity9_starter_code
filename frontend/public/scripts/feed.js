@@ -1,6 +1,4 @@
 import { getPosts, likeDisLikePost } from "./api.js";
-// import { current_User } from "./config.js";
-// import { handleLikeDisLikePost } from "./post.js";
 
 function logout(){
   localStorage.setItem("username",null)
@@ -8,8 +6,9 @@ function logout(){
 
 document.addEventListener("DOMContentLoaded", async function() {
     // Sample data
-    const username = localStorage.getItem('username');
+    const username = localStorage.getItem("username");
     const postsData = await getPosts();
+    postsData.reverse();
     // [
     //   { imageUrl: "scripts/test_res/land.jpeg", poser: "p1", time: "12.00", likes: 100,
     //     comment:[{commenter:"commenter1", commentText:"i like cat too"},
