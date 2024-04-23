@@ -30,7 +30,11 @@ document.addEventListener("DOMContentLoaded", async function() {
     const postsContainer = document.getElementById("postsContainer");
   
     function renderPosts() {
-      postsData.forEach(post => {
+      let postsDataArray = [];
+      //convert posts.json to array to get index
+      postsData.forEach(post => postsDataArray.push(post));
+      for (let i = 0; i < postsDataArray.length; i++) {
+        let post = postsDataArray[i];
         const postElement = document.createElement("div");
         postElement.classList.add("postBox");
         
@@ -59,16 +63,18 @@ document.addEventListener("DOMContentLoaded", async function() {
         interactSection.classList.add("interractSection");
         const likeBtn = document.createElement("button");
         likeBtn.innerText = "like";
-        likeBtn.setAttribute('id', 'ไอดี');
+        // likeBtn.setAttribute('id', 'ไอดี');
         likeBtn.addEventListener("click", () => likeDisLikePost(post._id, username));
         const likesElement = document.createElement("div");
         likesElement.classList.add("likes");
         likesElement.innerText = post.likeNumber + "likes";
         const newCommentElement = document.createElement("input");
         newCommentElement.type = "text";
+        newCommentElement.setAttribute('id', `commentText_${i}`);
         newCommentElement.placeholder = "Add new comment";
         const sendCommentBtn = document.createElement("button");
         sendCommentBtn.innerText = "send";
+        // sendCommentBtn.addEventListener("click", () => handleAddComment(`${i}`, username));
         
         interactSection.appendChild(likesElement);
         interactSection.appendChild(likeBtn);
@@ -93,7 +99,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         postElement.appendChild(commentSection);
         
         postsContainer.appendChild(postElement);
-      });
+      }
     }
   
     renderPosts();
