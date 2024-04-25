@@ -64,7 +64,12 @@ export const likeDisLikePost = async (req, res) => {
 export const addComment = async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
-    await post.update({ $push: { comments: {commenter: req.body.commenter, commentText: req.body.commentText } } });
+    // await post.update({ $push: { comments: {commenter: req.body.commenter, commentText: req.body.commentText } } });
+    post.comments.push({
+      commenter: req.body.commenter,
+      commentText: req.body.commentText,
+    })
+    await post.save();
     res.status(200).json("The comment has been posted");
   } catch (err) {
     res.status(500).json(err);
